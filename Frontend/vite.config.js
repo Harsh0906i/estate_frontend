@@ -10,6 +10,11 @@ export default defineConfig({
         secure: false,
       },
     },
+    "functions": {
+      "api/*": {
+        "maxDuration": 30
+      }
+    }  
   },
   plugins: [react()],
 });
