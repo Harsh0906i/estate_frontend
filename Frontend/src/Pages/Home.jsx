@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     async function fetchOffer() {
       try {
-        const res = await fetch(`/api/listing/get?offer=true&limit=4`);
+        const res = await fetch(`https://backend-c29n.vercel.app/api/listing/get?offer=true&limit=4`);
         const data = await res.json()
         setofferListing(data);
         fetchRent()
