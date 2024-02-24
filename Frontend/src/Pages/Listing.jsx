@@ -120,7 +120,7 @@ export default function Listing() {
             if (data.success === false) {
                 seterror(data.message)
             }
-            console.log(data);
+            console.log("data : ",data);
             navigate(`/listing/${data._id}`);
         } catch (error) {
             seterror(error.messsage)
@@ -160,11 +160,11 @@ export default function Listing() {
                     </div>
                     <div className="flex flex-wrap gap-6">
                         <div className="flex items-center gap-2">
-                            <input type="number" onChange={handleChange} value={formData.bedroom} className="p-3  border-gray-300 rounded-lg" id="bedrooms" min={'1'} max={'15'} required />
+                            <input type="number" onChange={handleChange} value={formData.bedrooms} className="p-3  border-gray-300 rounded-lg" id="bedrooms" min={'1'} max={'15'} required />
                             <span>Bedroom</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <input type="number" onChange={handleChange} value={formData.bathroom} className="p-3 border-gray-300 rounded-lg" id="bathrooms" min={'1'} max={'15'} required />
+                            <input type="number" onChange={handleChange} value={formData.bathrooms} className="p-3 border-gray-300 rounded-lg" id="bathrooms" min={'1'} max={'15'} required />
                             <span>Bathroom</span>
                         </div>
                         <div className="flex items-center gap-2">
