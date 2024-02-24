@@ -12,7 +12,7 @@ export default function Oauth() {
             const auth = getAuth(app)
             const result = await signInWithPopup(auth, provider)
             console.log(result);
-            const res = await fetch('/api/auth/google', {
+            const res = await fetch('https://backend-c29n.vercel.app/api/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ export default function UpdateListing() {
         async function fetchingListing() {
             const listingId = params.listingId
             console.log(listingId)
-            const res = await fetch(`/api/listing/getListing/${listingId}`);
+            const res = await fetch(`https://backend-c29n.vercel.app/api/listing/getListing/${listingId}`);
             const data = await res.json();
             setformData(data);
             if (data.success === false) {
@@ -119,7 +119,7 @@ export default function UpdateListing() {
             if (formData.regularPrice < formData.discountedPrice) {
                 seterror('Discounted price must be less than regular price!')
             }
-            const res = await fetch(`/api/listing/update/${params.listingId}`, {
+            const res = await fetch(`https://backend-c29n.vercel.app/api/listing/update/${params.listingId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -108,7 +108,7 @@ export default function Listing() {
             if (formData.regularPrice < formData.discountedPrice) {
                 seterror('Discounted price must be less than regular price!')
             }
-            const res = await fetch('/api/listing/create', {
+            const res = await fetch('https://backend-c29n.vercel.app/api/listing/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

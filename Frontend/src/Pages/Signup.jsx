@@ -16,7 +16,7 @@ export default function Signup() {
     e.preventDefault();
     try {
       setloading(true)
-      const res = await fetch('/api/auth/signup', {
+      const res = await fetch('https://backend-c29n.vercel.app/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

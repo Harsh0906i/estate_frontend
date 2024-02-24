@@ -27,7 +27,7 @@ export default function Home() {
 
     async function fetchRent() {
       try {
-        const res = await fetch(`/api/listing/get?type=rent&limit=4`);
+        const res = await fetch(`https://backend-c29n.vercel.app/api/listing/get?type=rent&limit=4`);
         const data = await res.json()
         setrentListing(data);
         saleFetch();
@@ -38,7 +38,7 @@ export default function Home() {
 
     async function saleFetch() {
       try {
-        const res = await fetch(`/api/listing/get?type=sale&limit=4`);
+        const res = await fetch(`https://backend-c29n.vercel.app/api/listing/get?type=sale&limit=4`);
         const data = await res.json()
         setsaleListing(data)
       } catch (error) {

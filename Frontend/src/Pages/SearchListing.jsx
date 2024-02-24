@@ -75,7 +75,7 @@ export default function SearchListing() {
         async function fetchList() {
             setloading(true)
             const searchQuery = newurl.toString();
-            const res = await fetch(`/api/listing/get?${searchQuery}`);
+            const res = await fetch(`https://backend-c29n.vercel.app/api/listing/get?${searchQuery}`);
             const data = await res.json();
             if (data.length > 8) {
                 setshowMore(true);
@@ -94,7 +94,7 @@ export default function SearchListing() {
         const UrlParams = new URLSearchParams(location.search);
         UrlParams.set('startIndex', startIndex);
         const searchQuery = UrlParams.toString();
-        const res = await fetch(`/api/listing/get?${searchQuery}`);
+        const res = await fetch(`https://backend-c29n.vercel.app/api/listing/get?${searchQuery}`);
         const data = await res.json();
         if (data.length < 9) {
             setshowMore(false)

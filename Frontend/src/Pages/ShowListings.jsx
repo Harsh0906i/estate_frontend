@@ -29,7 +29,7 @@ export default function ShowListings() {
         async function fetchListing() {
             try {
                 setloading(true);
-                const res = await fetch(`/api/listing/getListing/${params.listingId}`);
+                const res = await fetch(`https://backend-c29n.vercel.app/api/listing/getListing/${params.listingId}`);
                 const data = await res.json();
                 if (data.success === false) {
                     console.log(data.message);
