@@ -6,15 +6,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://backend-08cc.onrender.com',
+        target: 'https://backend-c29n.vercel.app/',
         secure: false,
       },
     },
-    "functions": {
-      "api/*": {
-        "maxDuration": 30
-      }
-    }  
+    
   },
   plugins: [react()],
 });
