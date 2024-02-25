@@ -31,15 +31,14 @@ export default function Signin() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
-
+      
       if (data.success === false) {
         dispatch(signInFaliure(data.message));
         return;
       }
       dispatch(signInSuccess(data))
-      navigate('/')
-
+      console.log(data);
+      
     } catch (error) {
       dispatch(signInFaliure(error.message));
     }
