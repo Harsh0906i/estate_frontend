@@ -126,6 +126,8 @@ export default function Profile() {
       setshowListingErr(false)
       const res = await fetch(`https://backend-c29n.vercel.app/api/user/listing/${currentUser._id}`);
       const data = await res.json();
+      console.log("c : ",currentUser._id)
+      console.log(data)
       if (data.success === false) {
         setshowListingErr(true);
         return;
