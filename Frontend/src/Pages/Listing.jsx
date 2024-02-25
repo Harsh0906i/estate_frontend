@@ -121,7 +121,7 @@ export default function Listing() {
                 seterror(data.message)
             }
             console.log("data : ",data);
-            navigate(`/listing/${data._id}`);
+            // navigate(`/listing/${data._id}`);
         } catch (error) {
             seterror(error.messsage)
             setloading(false)

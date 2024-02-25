@@ -139,7 +139,6 @@ export default function Profile() {
     }
   }
   async function HandleListingDelete(listingId) {
-    console.log(listingId);
     try {
       const res = await fetch(`https://backend-c29n.vercel.app/api/listing/delete/${listingId}`, {
         method: 'DELETE',
