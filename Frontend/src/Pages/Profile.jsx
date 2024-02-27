@@ -71,7 +71,8 @@ export default function Profile() {
         body: JSON.stringify(formData)
       });
       const data = await res.json();
-      console.log(data)
+      console.log(res.cookie)
+      console.log(res.headers)
       if (data.success === false) {
         dispatch(updateUserFaliure(data.message))
         return
