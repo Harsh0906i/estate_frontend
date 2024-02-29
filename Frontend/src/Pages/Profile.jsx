@@ -126,9 +126,10 @@ export default function Profile() {
   async function handleShowListing() {
     try {
       setshowListingErr(false)
-      const res = await fetch(`https://backend-c29n.vercel.app/api/user/listing/${currentUser._id}`);
+      const res = await fetch(`https://backend-c29n.vercel.app/api/user/listing/${currentUser._id}`,{
+        credentials:'include',
+      });
       const data = await res.json();
-       const token = response.headers.get('Authorization');
       console.log(data,"t : ",token);
       if (data.success === false) {
         setshowListingErr(true);
