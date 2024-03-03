@@ -31,6 +31,7 @@ export default function Signin() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+      console.log('Token : ',data.Token);
       
       if (data.success === false) {
         dispatch(signInFaliure(data.message));
