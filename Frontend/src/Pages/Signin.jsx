@@ -32,13 +32,12 @@ export default function Signin() {
       });
       const data = await res.json();
       console.log('Token : ',data.Token);
-      
       if (data.success === false) {
         dispatch(signInFaliure(data.message));
         return;
       }
       dispatch(signInSuccess(data))
-      navigate('/')
+      // navigate('/')
     } catch (error) {
       dispatch(signInFaliure(error.message));
     }
