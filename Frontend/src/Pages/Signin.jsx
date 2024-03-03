@@ -5,6 +5,7 @@ import { signInStart } from '../Redux/user/userSlice'
 import { signInFaliure } from '../Redux/user/userSlice'
 import { signInSuccess } from '../Redux/user/userSlice'
 import Oauth from '../Components/Oauth'
+import Cookies from 'js-cookie';
 
 export default function Signin() {
   const [formData, setFormData] = useState({})
@@ -32,10 +33,12 @@ export default function Signin() {
       });
       const data = await res.json();
       console.log('Token : ',data.Token);
+      const token=data.Token;
       if (data.success === false) {
         dispatch(signInFaliure(data.message));
         return;
       }
+       Cookies.set('access_token', token, { expires: 7 });
       dispatch(signInSuccess(data))
       // navigate('/')
     } catch (error) {
