@@ -40,7 +40,7 @@ export default function Signin() {
       }
        Cookies.set('access_token', token, { expires: 7 });
       dispatch(signInSuccess(data))
-      // navigate('/')
+      navigate('/')
     } catch (error) {
       dispatch(signInFaliure(error.message));
     }
