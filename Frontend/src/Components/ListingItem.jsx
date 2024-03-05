@@ -25,7 +25,7 @@ export default function ListingItem({ listings }) {
                             {listings.bedrooms > 1 ? `${listings.bedrooms} beds` : `${listings.bedrooms} bed`}
                         </div>
                         <div className="font-bold text-xs">
-                            {listings.bathrooms > 1 ? `${listings.bathrooms} baths` : `${listings.bathrooms} baths`}
+                            {listings.bathrooms > 1 ? `${listings.bathrooms} baths` : `${listings.bathrooms} bath`}
                         </div>
                     </div>
                 </div>
