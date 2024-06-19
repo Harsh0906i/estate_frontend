@@ -71,8 +71,6 @@ export default function Profile() {
         body: JSON.stringify(formData)
       });
       const data = await res.json();
-      console.log(res.cookie)
-      console.log(res.headers)
       if (data.success === false) {
         dispatch(updateUserFaliure(data.message))
         return
@@ -126,16 +124,16 @@ export default function Profile() {
   async function handleShowListing() {
     try {
       setshowListingErr(false)
-      const res = await fetch(`https://backend-c29n.vercel.app/api/user/listing/${currentUser._id}`,{
-        credentials:'include',
-      });
+      const res = await fetch(`https://backend-c29n.vercel.app/api/user/listing/${currentUser._id}`);
       const data = await res.json();
-      console.log(data,"t : ",token);
+      console.log("c : ", currentUser._id)
+      console.log(data)
       if (data.success === false) {
         setshowListingErr(true);
         return;
       }
       setuserListing(data)
+      console.log(data);
     } catch (error) {
       setshowListingErr(true);
     }
@@ -181,7 +179,7 @@ export default function Profile() {
         </p>
         <input type="text" placeholder='username' defaultValue={currentUser.username} onChange={HandleUpdate} className='border p-3 rounded-lg' id='username' />
         <input type="email" placeholder='email' defaultValue={currentUser.email} className='border p-3 rounded-lg' id='email' onChange={HandleUpdate} />
-        <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-90'>{loading ? 'Loading...' : 'Update'}</button>
+        {/* <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-90'>{loading ? 'Loading...' : 'Update'}</button> */}
         <Link to={'/create-listing'} className='bg-green-600 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' >Create Listing</Link>
       </form>
       <div className='flex justify-between mt-5'>
@@ -190,7 +188,7 @@ export default function Profile() {
       </div>
       <p className='text-red-700 mt-5'>{error ? error : ''}</p>
       <p className='text-green-600 mt-5'>{successUpdate ? 'User updated successfully!' : ''}</p>
-      <button className='text-green-700 w-full' onClick={handleShowListing}>Show your listings</button>
+      {/* <button className='text-green-700 w-full' onClick={handleShowListing}>Show your listings</button> */}
       {showListingErr && <p className='text-red-700' >Error showing listing</p>}
       <div className='flex flex-col gap-4'>
         {userListing && userListing.length > 0 &&
